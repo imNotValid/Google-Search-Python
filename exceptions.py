@@ -1,1 +1,0 @@
-class QueriesNotFound(Exception): pass
