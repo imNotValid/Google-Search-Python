@@ -1,6 +1,7 @@
 # GoogleSearch-Python
 🎗 Search and get full query for search
 
+```
 from googlesearch import (
     getQuery,
     searchQuery
@@ -13,3 +14,4 @@ print(cls.searchQuery("khazar sea")) -> (title, link)
 
 print(cls.getQuery("khazar sea")) -> get full query
 > ['khazar sea', 'khazar sea shipping lines', 'are sea shepherds still active', 'who are the hasidim'...
+```
