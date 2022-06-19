@@ -1,3 +1,6 @@
+# Cr imNotValid Cr imNotValid Cr imNotValid
+# Cr imNotValid Cr imNotValid Cr imNotValid
+# Cr imNotValid Cr imNotValid Cr imNotValid
 from random import choice
 from json import loads
 from utils.exceptions import QueriesNotFound
