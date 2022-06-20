@@ -1,6 +1,11 @@
 # GoogleSearch-Python
 🎗 Search and get full query for search
 
+first
+```
+pip install requests bs4
+```
+
 ```
 from googlesearch import (
     getQuery,
