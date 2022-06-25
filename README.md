@@ -3,7 +3,7 @@
 
 first > ```pip install requests bs4```
 
-```
+```python
 from googlesearch import (
     getQuery,
     searchQuery
