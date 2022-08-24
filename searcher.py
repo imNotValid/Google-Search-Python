@@ -48,11 +48,11 @@ class searcher:
             list of query
         """        
         params = {
-			"q": query,
-			"client": "gws-wiz",
-            "hl": "en",
-			"xssi": "t",
-			"pq": query
+		"q": query,
+		"client": "gws-wiz",
+		"hl": "en",
+		"xssi": "t",
+		"pq": query
 		}
         try:
             queries = loads(unescape(self.__SendRequest(self.__queryCompletionUrl, params).text.split("\n", 1)[1]))[0]
