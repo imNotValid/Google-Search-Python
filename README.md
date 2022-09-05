@@ -1,7 +1,9 @@
-# GoogleSearch-Python
+# Google-Search-Python
 🎗 Search and get full query for search
 
-first > ```pip install requests bs4```
+used mudules ```requests, bs4```
+
+first ```pip install requests bs4```
 
 ```python
 from googlesearch import (
