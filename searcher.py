@@ -1,6 +1,3 @@
-# Cr imNotValid Cr imNotValid Cr imNotValid
-# Cr imNotValid Cr imNotValid Cr imNotValid
-# Cr imNotValid Cr imNotValid Cr imNotValid
 from random import choice
 from json import loads
 from utils.exceptions import QueriesNotFound
@@ -17,6 +14,7 @@ def randomUserAgent():
         result = choice(r.read().split("\n"))
         r.close()
     return {"User-Agent": result}
+
 class searcher:
     def __init__(self, proxies: dict=None, userAgent=None):
         """
@@ -33,6 +31,7 @@ class searcher:
         else:
             self.__headers =  randomUserAgent()
         self.__proxies = proxies
+
     def __SendRequest(self, url, params):
         return get(
             url,
@@ -40,6 +39,7 @@ class searcher:
             proxies=self.__proxies,
             headers=self.__headers
         )
+
     def getQuery(self, query: str):
         """
         Args:
@@ -58,7 +58,9 @@ class searcher:
             queries = loads(unescape(self.__SendRequest(self.__queryCompletionUrl, params).text.split("\n", 1)[1]))[0]
         except IndexError:
             raise QueriesNotFound("There are no queries to search")
+
         return self.__filterStringsAndDict(queries)
+
     def searchQuery(self, query: str, page: int=1):
         """
         Args:
@@ -75,8 +77,11 @@ class searcher:
             "start": 10
         }
         return self.__getInfo(self.__SendRequest(self.__searchUrl, params).text)
+
     def __deleteTag(self, arg): return sub(self.__tagDeleter, "", arg)
+
     def __filterStringsAndDict(self, arg): return [self.__deleteTag(list(filter(lambda x: type(x) is str, li))[0]) for li in arg]
+
     def __getInfo(self, text):
         find = []
         soup = BeautifulSoup(text, "html.parser")
