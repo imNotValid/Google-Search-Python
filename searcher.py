@@ -15,7 +15,7 @@ def randomUserAgent():
         r.close()
     return {"User-Agent": result}
 
-class searcher:
+class Searcher:
     def __init__(self, proxies: dict=None, userAgent=None):
         """
         Get cookies from google.com and create a new session
@@ -40,7 +40,7 @@ class searcher:
             headers=self.__headers
         )
 
-    def getQuery(self, query: str):
+    def get_query(self, query: str):
         """
         Args:
             query (str): query for search
@@ -61,7 +61,7 @@ class searcher:
 
         return self.__filterStringsAndDict(queries)
 
-    def searchQuery(self, query: str, page: int=1):
+    def search_query(self, query: str, page: int=1):
         """
         Args:
             query (str): query for search
