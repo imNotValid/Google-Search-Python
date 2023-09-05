@@ -9,7 +9,7 @@ from re import (
     sub
 )
 
-def randomUserAgent():
+def random_user_agent():
     with open("./utils/userAgents.txt", "r") as r:
         result = choice(r.read().split("\n"))
         r.close()
@@ -29,7 +29,7 @@ class Searcher:
         if userAgent:
             self.__headers = {"User-Agent": userAgent}
         else:
-            self.__headers =  randomUserAgent()
+            self.__headers =  random_user_agent()
         self.__proxies = proxies
 
     def __SendRequest(self, url, params):
@@ -93,7 +93,7 @@ class Searcher:
 
 if __name__ == "__main__":
     cls = searcher(userAgent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101 Firefox/102.0")
-    print(cls.searchQuery("khazar sea"))
+    print(cls.search_query("khazar sea"))
     # > [('Caspian Sea: Largest Inland Body of Water - Live Science', 'https://www.livescience.com/57999-caspian-sea-facts.html')...
-    print(cls.getQuery("khazar sea"))
+    print(cls.get_query("khazar sea"))
     # > ['khazar sea', 'khazar sea shipping lines', 'are sea shepherds still active', 'who are the hasidim'...
